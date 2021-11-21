@@ -2,4 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Author, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a first name, last name and a homepage" do
+    author = Author.new(first_name: "Joseph", last_name: "Fourier", homepage: "https://en.wikipedia.org/wiki/Joseph_Fourier")
+    expect(author.first_name).to eq("Joseph")
+    expect(author.last_name).to eq("Fourier")
+    expect(author.homepage).to eq("https://en.wikipedia.org/wiki/Joseph_Fourier")
+    expect(author.name()).to eq("Joseph Fourier")
+  end
 end
