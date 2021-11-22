@@ -1,2 +1,16 @@
-<h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+<h1>Authors</h1>
+
+<table>
+	<thead>
+		<th>Full name</th>
+		<th>Homepage</th>
+	</thead>
+	<% @authors.each do |author| %>
+		<tr>
+			<td><%= author.name %></td>
+			<td><a href="<%= author.homepage %>"><%= author.homepage %></a></td>
+		</tr>
+	<% end %>
+</table>
+<br>
+<%= link_to("Create Author", new_author_path) %>
