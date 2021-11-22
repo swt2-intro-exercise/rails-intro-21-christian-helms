@@ -8,16 +8,22 @@ class AuthorsController < ApplicationController
   end
 
   def new
-    @article = Author.new
+    @author = Author.new
   end
 
   def create
-    @article = Author.new(first_name: "...")
-
-    if @article.save
-      redirect_to @author
-    else
-      render :new
-    end
+    # @author = Author.new(author_params)
+    # @author.save
+    # if @author.save
+    #   redirect_to @author
+    # else
+    #   render :new
+    # end
+    redirect_to "/"
   end
+
+  private
+    def author_params
+      params.require(:author).permit(:first_name, :last_name, :homepage)
+    end
 end
