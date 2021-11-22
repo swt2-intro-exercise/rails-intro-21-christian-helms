@@ -6,6 +6,7 @@
 		<th>Homepage</th>
 		<th>Details page</th>
 		<th>Edit page</th>
+		<th>Delete author</th>
 	</thead>
 	<% @authors.each do |author| %>
 		<tr>
@@ -13,6 +14,7 @@
 			<td><a href="<%= author.homepage %>"><%= author.homepage %></a></td>
 			<td><a href="/authors/<%= author.id %>">visit</a></td>
 			<td><%= link_to "edit", edit_author_path(author) %></td>
+			<td><%= link_to("delete", author_path(author), method: :delete) %></td>
 		</tr>
 	<% end %>
 </table>

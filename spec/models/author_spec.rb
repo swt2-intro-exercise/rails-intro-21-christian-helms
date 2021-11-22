@@ -13,4 +13,10 @@ RSpec.describe Author, type: :model do
     author = Author.new(first_name: "Alan", homepage: "http://wikipedia.com")
     expect(author).to_not be_valid
   end
+  it "should be able to delete records" do
+    author = FactoryBot.create :author
+    author.destroy()
+    query_result = Author.find_by(id: author.id)
+    expect(query_result).to be_nil
+  end
 end
