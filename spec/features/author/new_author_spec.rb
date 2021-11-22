@@ -21,4 +21,7 @@ describe "New author page", type: :feature do
     alan = Author.find_by(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/Alan_Turing')
     expect(alan).to be
   end
+  it "should not accept an author without a last name" do
+    
+  end
 end
