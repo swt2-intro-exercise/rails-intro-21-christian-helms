@@ -13,4 +13,8 @@ RSpec.describe Paper, type: :model do
     paper = Paper.new(venue: "mind 49: 433-460", title: "computing machinery and intelligence")
     expect(paper).to_not be_valid
   end
+  it "should only allow integer years" do
+    paper = Paper.new(venue: "mind 49: 433-460", title: "computing machinery and intelligence", year: "nineteen-fifty")
+    expect(paper).to_not be_valid
+  end
 end
